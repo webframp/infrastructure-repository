@@ -53,7 +53,7 @@ SparkleFormation.dynamic(:asg) do |_name, _config={}|
 
   dynamic!(:launch_configuration, _name) do
     properties do
-      image_id map!(:platforms, 'AWS::Region', ref!("#{_name}_instance_image_type".to_sym))
+      image_id map!(:platforms, region!, ref!("#{_name}_instance_image_type".to_sym))
       instance_type ref!("#{_name}_instance_size".to_sym)
       key_name ref!("#{_name}_key_name".to_sym)
       security_groups [attr!("#{_name}_security_group".to_sym, 'GroupId')]

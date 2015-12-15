@@ -34,9 +34,9 @@ SfnRegistry.register(:chef_metadata) do |_name, _config={}|
         content do
           run_list _config[:run_list] ? _config[:run_list] : ref!("#{_name}_run_list".to_sym)
           stack do
-            name ref!('AWS::StackName')
-            id ref!('AWS::StackId')
-            region ref!('AWS::Region')
+            name stack_name!
+            id stack_id!
+            region region!
             creator ref!(:creator)
           end
         end
