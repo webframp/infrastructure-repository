@@ -30,7 +30,7 @@ SparkleFormation.dynamic(:load_balancer) do |_name, _config={}|
 
   _lb_resource = dynamic!(:elastic_load_balancing_load_balancer, _name, :resource_name_suffix => :load_balancer) do
     properties do
-      availability_zones azs!
+      availability_zones zones
       listeners array!(
         ->{
           protocol _config[:p][:load_balancer_protocol]

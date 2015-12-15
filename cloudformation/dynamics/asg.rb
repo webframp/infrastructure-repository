@@ -1,5 +1,7 @@
 SparkleFormation.dynamic(:asg) do |_name, _config={}|
 
+  zones = registry!(:zones)
+
   parameters do
 
     registry!(:instance_parameters, _name, _config)
@@ -64,7 +66,7 @@ SparkleFormation.dynamic(:asg) do |_name, _config={}|
 
   dynamic!(:auto_scaling_group, _name) do
     properties do
-      availability_zones azs!
+      availability_zones zones
       min_size ref!("#{_name}_min_nodes".to_sym)
       max_size ref!("#{_name}_max_nodes".to_sym)
       if(_config[:load_balancers])

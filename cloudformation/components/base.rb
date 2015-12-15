@@ -22,6 +22,12 @@ SparkleFormation.build do
 
   end
 
+  mappings.platforms('us-east-1'._no_hump) do
+    _camel_keys_set(:auto_disable)
+    set!('ubuntu1204', 'ami-81a0e2eb')
+    set!('ubuntu1404', 'ami-7388cd19')
+  end
+
   mappings.platforms('us-west-2'._no_hump) do
     _camel_keys_set(:auto_disable)
     set!('ubuntu1204', 'ami-ad42009d')
