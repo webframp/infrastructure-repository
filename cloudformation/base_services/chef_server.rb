@@ -6,7 +6,7 @@ SparkleFormation.new(:chef_server).load(:base, :chef).overrides do
 
     chef_server_version do
       type 'String'
-      default '11.1.5-1'
+      default '12.3.1-1'
     end
 
     chef_client_run_list do
@@ -121,10 +121,10 @@ SparkleFormation.new(:chef_server).load(:base, :chef).overrides do
           ].join(' ')
         end
         commands('01_fetch_chef_server_cookbook') do
-          command 'wget -O /tmp/cstg https://codeload.github.com/opscode-cookbooks/chef-server/tar.gz/v2.1.4'
+          command 'wget -O /tmp/cstg https://codeload.github.com/opscode-cookbooks/chef-server/tar.gz/v4.1.0'
         end
         commands('02_fetch_chef_server_populator_cookbook') do
-          command 'wget -O /tmp/csptg https://codeload.github.com/hw-cookbooks/chef-server-populator/tar.gz/v0.4.0'
+          command 'wget -O /tmp/csptg https://codeload.github.com/hw-cookbooks/chef-server-populator/tar.gz/v0.4.2'
         end
         commands('03_install_chef_client') do
           command join!(
@@ -176,7 +176,7 @@ SparkleFormation.new(:chef_server).load(:base, :chef).overrides do
   end
 
   parameters do
-    chef_server_instance_image_type.default 'ubuntu1204'
+    chef_server_instance_image_type.default 'ubuntu1404'
     chef_server_instance_size.default 'm3.medium'
   end
 

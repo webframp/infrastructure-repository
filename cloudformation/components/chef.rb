@@ -21,7 +21,7 @@ SparkleFormation.build do
 
     chef_client_version do
       description 'Chef client version'
-      default '11.16.2'
+      default '12.5.1'
       type 'String'
       disable_apply true
     end

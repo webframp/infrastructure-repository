@@ -2,7 +2,7 @@ Batali.define do
 
   source 'https://supermarket.chef.io'
 
-  cookbook 'users', '~> 1.8.2'
-  cookbook 'chef-client', '~> 4.2.4'
+  cookbook 'users', '~> 2.0.0'
+  cookbook 'chef-client', '~> 4.3.2'
 
 end

@@ -14,7 +14,7 @@ SfnRegistry.register(:instance_parameters) do |_name, _config={}|
   end
 
   set!("#{_name}_instance_image_type".to_sym) do
-    default 'ubuntu1204'
+    default 'ubuntu1404'
     allowed_values ['ubuntu1404', 'ubuntu1204']
     description 'Instance platform'
     type 'String'
